@@ -4,7 +4,9 @@ import FarmersController from "../controllers/farmers-controller.js";
 const router = express.Router();
 
 router
+  .get("/dashboard", FarmersController.getDashboard)
   .get("/farmer", FarmersController.listFarmers)
+  .get("/farmer/:id", FarmersController.getFarmerPerId)
   .post("/farmer", FarmersController.registerFarmer)
   .put("/farmer/:id", FarmersController.updateFarmer)
   .delete("/farmer/:id", FarmersController.deleteFarmer);
